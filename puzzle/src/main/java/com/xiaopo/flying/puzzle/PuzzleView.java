@@ -493,10 +493,11 @@ public class PuzzleView extends View {
     if (line == null || event == null) return;
 
     boolean needUpdate;
+    float padding = puzzleLayout.getPadding();
     if (line.direction() == Line.Direction.HORIZONTAL) {
-      needUpdate = line.move(event.getY() - downY, 80);
+      needUpdate = line.move(event.getY() - downY, 80 + padding * 2);
     } else {
-      needUpdate = line.move(event.getX() - downX, 80);
+      needUpdate = line.move(event.getX() - downX, 80 + padding * 2);
     }
 
     if (needUpdate) {
