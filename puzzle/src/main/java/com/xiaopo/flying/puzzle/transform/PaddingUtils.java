@@ -5,6 +5,9 @@ import android.graphics.PointF;
 public class PaddingUtils {
     public static FormLine formLine(PointF A, PointF B, float lengthOfNormalVector) {
         double k = Math.sqrt(lengthOfNormalVector * lengthOfNormalVector / ((A.y - B.y) * (A.y - B.y) + (B.x - A.x) * (B.x - A.x)));
+        if (k == 0) {
+            k = 1;
+        }
         Vector normalVector = new Vector();
         normalVector.x = k * (A.y - B.y);
         normalVector.y = k * (B.x - A.x);

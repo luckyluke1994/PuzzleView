@@ -142,10 +142,18 @@ class SlantArea implements Area {
         if (translateLeftLine.x < 0) {
             translateLeftLine = new Vector(-1 * translateLeftLine.x, translateLeftLine.y);
         }
-        topLine.translateBy(translateTopLine);
-        rightLine.translateBy(translateRightLine);
-        bottomLine.translateBy(translateBottomLine);
-        leftLine.translateBy(translateLeftLine);
+        if (paddingTop > 0) {
+            topLine.translateBy(translateTopLine);
+        }
+        if (paddingRight > 0) {
+            rightLine.translateBy(translateRightLine);
+        }
+        if (paddingBottom > 0) {
+            bottomLine.translateBy(translateBottomLine);
+        }
+        if (paddingLeft > 0) {
+            leftLine.translateBy(translateLeftLine);
+        }
 
         PointD newLeftTop = PaddingUtils.getCrossPoint(leftLine, topLine);
         PointD newRightTop = PaddingUtils.getCrossPoint(topLine, rightLine);
