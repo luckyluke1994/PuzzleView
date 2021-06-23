@@ -25,4 +25,41 @@ public class PaddingUtils {
         double y = (b.normalVector.x * (a.normalVector.x * a.point.x + a.normalVector.y * a.point.y) - a.normalVector.x * (b.normalVector.x * b.point.x + b.normalVector.y * b.point.y)) / (a.normalVector.y * b.normalVector.x - a.normalVector.x * b.normalVector.y);
         return new PointD(x, y);
     }
+
+    public static boolean isVectorSameDirection(Vector a, Vector b) {
+        return getCoefficientVector(a, b) > 0;
+    }
+
+    /**
+     *
+     * @param a
+     * @param b
+     * @return k with a = k.b
+     */
+    public static double getCoefficientVector(Vector a, Vector b) {
+        double k = 0;
+
+        if (b.x != 0) {
+            k = a.x / b.x;
+            if (k * b.y == a.y) {
+                return k;
+            } else {
+                return 0;
+            }
+        } else if (b.y != 0) {
+            k = a.y / b.y;
+            if (k * b.x == a.x) {
+                return k;
+            } else {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+    }
+
+    public static Vector getVectorHasLength(Vector a, float lengthOfVector) {
+        double k = Math.sqrt(lengthOfVector * lengthOfVector / (a.x * a.x + a.y * a.y));
+        return new Vector(a.x * k, a.y * k);
+    }
 }

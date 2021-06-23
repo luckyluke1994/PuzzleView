@@ -130,18 +130,31 @@ class SlantArea implements Area {
         Vector translateBottomLine = bottomLine.normalVector;
         Vector translateLeftLine = leftLine.normalVector;
 
-        if (translateTopLine.y < 0) {
-            translateTopLine = new Vector(translateTopLine.x, -1 * translateTopLine.y);
-        }
-        if (translateRightLine.x > 0) {
-            translateRightLine = new Vector(-1 * translateRightLine.x, translateRightLine.y);
-        }
-        if (translateBottomLine.y > 0) {
-            translateBottomLine = new Vector(translateBottomLine.x, -1 * translateBottomLine.y);
-        }
-        if (translateLeftLine.x < 0) {
-            translateLeftLine = new Vector(-1 * translateLeftLine.x, translateLeftLine.y);
-        }
+        FormLine directionLine = new FormLine(new Vector(topLine.normalVector.y * -1, topLine.normalVector.x), new PointD(rightBottom.x, rightBottom.y));
+        PointD crossPoint = PaddingUtils.getCrossPoint(topLine, directionLine);
+
+        translateTopLine = new Vector(rightBottom.x - crossPoint.x, rightBottom.y - crossPoint.y);
+        translateTopLine = PaddingUtils.getVectorHasLength(translateTopLine, paddingTop);
+
+
+        directionLine = new FormLine(new Vector(rightLine.normalVector.y * -1, rightLine.normalVector.x), new PointD(leftTop.x, leftTop.y));
+        crossPoint = PaddingUtils.getCrossPoint(rightLine, directionLine);
+
+        translateRightLine = new Vector(leftTop.x - crossPoint.x, leftTop.y - crossPoint.y);
+        translateRightLine = PaddingUtils.getVectorHasLength(translateRightLine, paddingRight);
+
+        directionLine = new FormLine(new Vector(bottomLine.normalVector.y * -1, bottomLine.normalVector.x), new PointD(leftTop.x, leftTop.y));
+        crossPoint = PaddingUtils.getCrossPoint(bottomLine, directionLine);
+
+        translateBottomLine = new Vector(leftTop.x - crossPoint.x, leftTop.y - crossPoint.y);
+        translateBottomLine = PaddingUtils.getVectorHasLength(translateBottomLine, paddingBottom);
+
+        directionLine = new FormLine(new Vector(leftLine.normalVector.y * -1, leftLine.normalVector.x), new PointD(rightTop.x, rightTop.y));
+        crossPoint = PaddingUtils.getCrossPoint(leftLine, directionLine);
+
+        translateLeftLine = new Vector(rightTop.x - crossPoint.x, rightTop.y - crossPoint.y);
+        translateLeftLine = PaddingUtils.getVectorHasLength(translateLeftLine, paddingLeft);
+
         if (paddingTop > 0) {
             topLine.translateBy(translateTopLine);
         }
