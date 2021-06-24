@@ -51,7 +51,7 @@ public class ProcessActivity extends AppCompatActivity implements View.OnClickLi
     int pieceSize = getIntent().getIntExtra("piece_size", 0);
     int themeId = getIntent().getIntExtra("theme_id", 0);
     bitmapPaint = getIntent().getStringArrayListExtra("photo_path");
-    puzzleLayout = PuzzleUtils.getPuzzleLayout(type, pieceSize, themeId);
+    puzzleLayout = PuzzleUtils.getPuzzleLayout(this, type, pieceSize, themeId);
 
     initView();
 

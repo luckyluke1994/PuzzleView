@@ -16,6 +16,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import com.xiaopo.flying.puzzle.special.SpecialPuzzlePiece;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -711,7 +714,8 @@ public class PuzzleView extends View {
     final Area area = puzzleLayout.getArea(position);
     area.setPadding(piecePadding);
 
-    PuzzlePiece piece = new PuzzlePiece(drawable, area, new Matrix());
+    PuzzlePiece piece;
+    piece = area.createPuzzlePiece(getContext(), drawable, new Matrix());
 
     final Matrix matrix = initialMatrix != null
         ? new Matrix(initialMatrix) : MatrixUtils.generateMatrix(area, drawable, 0f);

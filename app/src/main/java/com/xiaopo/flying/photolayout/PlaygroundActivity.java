@@ -2,6 +2,8 @@ package com.xiaopo.flying.photolayout;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -12,6 +14,10 @@ import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
 import com.xiaopo.flying.puzzle.PuzzleLayout;
 import com.xiaopo.flying.puzzle.slant.SlantPuzzleLayout;
+import com.xiaopo.flying.puzzle.straight.StraightPuzzleLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PlaygroundActivity extends AppCompatActivity {
 
@@ -47,15 +53,25 @@ public class PlaygroundActivity extends AppCompatActivity {
 
     puzzleList.setAdapter(puzzleAdapter);
 
-    puzzleAdapter.refreshData(PuzzleUtils.getAllPuzzleLayouts(), null);
+    List<Bitmap> bitmaps = new ArrayList<>();
+    for (int index = 0; index < 9; index++) {
+      Bitmap bmp = Bitmap.createBitmap(400, 600, Bitmap.Config.ARGB_8888);
+      Canvas canvas=new Canvas(bmp);
+      canvas.drawColor(Color.WHITE);
+      bitmaps.add(bmp);
+    }
+
+    puzzleAdapter.refreshData(PuzzleUtils.getAllPuzzleLayouts(this), bitmaps);
 
     puzzleAdapter.setOnItemClickListener(new PuzzleAdapter.OnItemClickListener() {
       @Override public void onItemClick(PuzzleLayout puzzleLayout, int themeId) {
         Intent intent = new Intent(PlaygroundActivity.this, ProcessActivity.class);
         if (puzzleLayout instanceof SlantPuzzleLayout) {
           intent.putExtra("type", 0);
-        } else {
+        } else if (puzzleLayout instanceof StraightPuzzleLayout){
           intent.putExtra("type", 1);
+        } else {
+          intent.putExtra("type", 2);
         }
         intent.putExtra("piece_size", puzzleLayout.getAreaCount());
         intent.putExtra("theme_id", themeId);

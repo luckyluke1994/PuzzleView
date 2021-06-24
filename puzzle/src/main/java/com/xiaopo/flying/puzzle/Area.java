@@ -1,8 +1,13 @@
 package com.xiaopo.flying.puzzle;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+
 import java.util.List;
 
 /**
@@ -57,6 +62,11 @@ public interface Area {
 
   void setPadding(float paddingLeft, float paddingTop, float paddingRight, float paddingBottom);
 
+  PuzzlePiece createPuzzlePiece(Context context, Drawable drawable, Matrix matrix);
+
+  boolean isDrawByPath();
+
+  Bitmap getAreaMask(Context context);
 }
 
 

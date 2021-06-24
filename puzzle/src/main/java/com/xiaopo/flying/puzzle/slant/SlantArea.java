@@ -1,11 +1,16 @@
 package com.xiaopo.flying.puzzle.slant;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
 import com.xiaopo.flying.puzzle.Area;
 import com.xiaopo.flying.puzzle.Line;
+import com.xiaopo.flying.puzzle.PuzzlePiece;
 import com.xiaopo.flying.puzzle.transform.FormLine;
 import com.xiaopo.flying.puzzle.transform.PaddingUtils;
 import com.xiaopo.flying.puzzle.transform.PointD;
@@ -370,6 +375,21 @@ class SlantArea implements Area {
         this.paddingTop = paddingTop;
         this.paddingRight = paddingRight;
         this.paddingBottom = paddingBottom;
+    }
+
+    @Override
+    public PuzzlePiece createPuzzlePiece(Context context, Drawable drawable, Matrix matrix) {
+        return new PuzzlePiece(context, drawable, this, matrix);
+    }
+
+    @Override
+    public boolean isDrawByPath() {
+        return true;
+    }
+
+    @Override
+    public Bitmap getAreaMask(Context context) {
+        return null;
     }
 
     void updateCornerPoints() {

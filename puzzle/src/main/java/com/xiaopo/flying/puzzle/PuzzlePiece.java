@@ -1,6 +1,7 @@
 package com.xiaopo.flying.puzzle;
 
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -14,6 +15,7 @@ import android.graphics.RectF;
 import android.graphics.Xfermode;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
@@ -27,13 +29,9 @@ import static com.xiaopo.flying.puzzle.MatrixUtils.judgeIsImageContainsBorder;
  */
 @SuppressWarnings("WeakerAccess")
 public class PuzzlePiece {
-  private static final Xfermode SRC_IN = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
+  protected static final Xfermode SRC_IN = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
 
-  private Drawable drawable;
-  private Matrix matrix;
   private Matrix previousMatrix;
-  private Area area;
-  private Rect drawableBounds;
   private float[] drawablePoints;
   private float[] mappedDrawablePoints;
 
@@ -49,7 +47,14 @@ public class PuzzlePiece {
   private Matrix tempMatrix;
   private String path = "";
 
-  PuzzlePiece(Drawable drawable, Area area, Matrix matrix) {
+  protected Drawable drawable;
+  protected Matrix matrix;
+  protected Area area;
+  protected Rect drawableBounds;
+  protected Context mContext;
+
+  public PuzzlePiece(Context context, Drawable drawable, Area area, Matrix matrix) {
+    this.mContext = context;
     this.drawable = drawable;
     this.area = area;
     this.matrix = matrix;
@@ -70,11 +75,12 @@ public class PuzzlePiece {
     this.tempMatrix = new Matrix();
   }
 
-  void draw(Canvas canvas, boolean quickMode) {
+  public void draw(Canvas canvas, boolean quickMode) {
+    Log.i("TAG", "draw: piece");
     draw(canvas, 255, true, quickMode);
   }
 
-  void draw(Canvas canvas, int alpha, boolean quickMode) {
+  public void draw(Canvas canvas, int alpha, boolean quickMode) {
     draw(canvas, alpha, false, quickMode);
   }
 
