@@ -9,6 +9,7 @@ import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 
@@ -18,6 +19,7 @@ import com.xiaopo.flying.puzzle.PuzzlePiece;
 import com.xiaopo.flying.puzzle.special.model.LibCollageInfo;
 import com.xiaopo.flying.puzzle.special.model.LibCollagePoint;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -27,6 +29,7 @@ public class SpecialArea implements Area {
     private LibCollageInfo mLibCollageInfo;
     private Path areaPath = new Path();
     private RectF areaRect = new RectF();
+    private Region areaRegion = new Region();
 
     private int glowRadius = 10;
     private int innerSpaceBorder = 0;
@@ -90,7 +93,29 @@ public class SpecialArea implements Area {
 
     @Override
     public boolean contains(float x, float y) {
-        return false;
+        if (isDrawByPath()) {
+            return areaRegion.contains((int) x, (int) y);
+        } else {
+            if (mMaskBitmap != null) {
+                try {
+                    float relativeX = x - areaRect.left;
+                    float relativeY = y - areaRect.top;
+                    int shapePointX = (int) (relativeX / (width() / mMaskBitmap.getWidth()));
+                    int shapePointY = (int) (relativeY / (height() / mMaskBitmap.getHeight()));
+                    if (shapePointX < 0) {
+                        shapePointX = 0;
+                    }
+                    if (shapePointY < 0) {
+                        shapePointY = 0;
+                    }
+                    return mMaskBitmap.getPixel(shapePointX, shapePointY) != 0;
+                } catch (Exception e) {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
     }
 
     @Override
@@ -110,7 +135,7 @@ public class SpecialArea implements Area {
 
     @Override
     public List<Line> getLines() {
-        return null;
+        return new ArrayList<>();
     }
 
     @Override
@@ -176,6 +201,7 @@ public class SpecialArea implements Area {
     public void setLibCollageInfo(LibCollageInfo libCollageInfo) {
         mLibCollageInfo = libCollageInfo;
         updateSizeAndPath();
+        updateRegion();
     }
 
     private void updateSizeAndPath() {
@@ -221,6 +247,17 @@ public class SpecialArea implements Area {
         Matrix translateMatrix = new Matrix();
         translateMatrix.postTranslate(x1, y1);
         areaPath.transform(translateMatrix);
+    }
+
+    private void updateRegion() {
+        RectF regionRect = new RectF();
+        areaPath.computeBounds(regionRect, true);
+        areaRegion.setPath(areaPath,
+                new Region(
+                        Math.round(regionRect.left + 0.5f),
+                        Math.round(regionRect.top + 0.5f),
+                        Math.round(regionRect.right + 0.5f),
+                        Math.round(regionRect.bottom + 0.5f)));
     }
 
     private Bitmap getMaskBitmap(Bitmap bitmap) {

@@ -581,7 +581,8 @@ public class PuzzleView extends View {
   }
 
   private PuzzlePiece findHandlingPiece() {
-    for (PuzzlePiece piece : puzzlePieces) {
+    for (int index = puzzlePieces.size() - 1; index >= 0; index--) {
+      PuzzlePiece piece = puzzlePieces.get(index);
       if (piece.contains(downX, downY)) {
         return piece;
       }
