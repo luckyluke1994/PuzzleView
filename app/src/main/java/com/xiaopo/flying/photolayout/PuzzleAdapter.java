@@ -9,6 +9,8 @@ import com.xiaopo.flying.photolayout.layout.slant.NumberSlantLayout;
 import com.xiaopo.flying.photolayout.layout.straight.NumberStraightLayout;
 import com.xiaopo.flying.puzzle.PuzzleLayout;
 import com.xiaopo.flying.puzzle.SquarePuzzleView;
+import com.xiaopo.flying.puzzle.layouts.special.NumberSpecialLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +46,8 @@ public class PuzzleAdapter extends RecyclerView.Adapter<PuzzleAdapter.PuzzleView
             theme = ((NumberSlantLayout) puzzleLayout).getTheme();
           } else if (puzzleLayout instanceof NumberStraightLayout) {
             theme = ((NumberStraightLayout) puzzleLayout).getTheme();
+          } else if (puzzleLayout instanceof NumberSpecialLayout){
+            theme = ((NumberSpecialLayout) puzzleLayout).getTheme();
           }
           onItemClickListener.onItemClick(puzzleLayout, theme);
         }

@@ -17,7 +17,7 @@ public class TwoSpecialLayout extends NumberSpecialLayout {
         mContext = context;
         mTemplateResList = new ArrayList<>();
         mTemplateResList = new ArrayList<>();
-        Template2.init(mTemplateResList, mContext, 0, 0, 0, 0, 2);
+        Template2.init(mTemplateResList, mContext, 10, 0, 0, 0, 2);
     }
 
     @Override
@@ -29,68 +29,6 @@ public class TwoSpecialLayout extends NumberSpecialLayout {
 
     @Override
     public void layout() {
-        switch (theme) {
-            case 0: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 1: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 2: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 3: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 4: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 5: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 6: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 7: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 8: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 9: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 10: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 11: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-
-            case 12: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            case 13: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-            default: {
-                setTemplateRes(mTemplateResList.get(4));
-                break;
-            }
-        }
+        setTemplateRes(mTemplateResList.get(theme));
     }
 }
