@@ -18,6 +18,13 @@ import com.xiaopo.flying.photolayout.layout.straight.StraightLayoutHelper;
 import com.xiaopo.flying.photolayout.layout.straight.ThreeStraightLayout;
 import com.xiaopo.flying.photolayout.layout.straight.TwoStraightLayout;
 import com.xiaopo.flying.puzzle.PuzzleLayout;
+import com.xiaopo.flying.puzzle.layouts.special.FiveSpecialLayout;
+import com.xiaopo.flying.puzzle.layouts.special.FourSpecialLayout;
+import com.xiaopo.flying.puzzle.layouts.special.NineSpecialLayout;
+import com.xiaopo.flying.puzzle.layouts.special.OneSpecialLayout;
+import com.xiaopo.flying.puzzle.layouts.special.SevenSpecialLayout;
+import com.xiaopo.flying.puzzle.layouts.special.SixSpecialLayout;
+import com.xiaopo.flying.puzzle.layouts.special.ThreeSpecialLayout;
 import com.xiaopo.flying.puzzle.layouts.special.TwoSpecialLayout;
 import com.xiaopo.flying.puzzle.special.SpecialPuzzleLayout;
 
@@ -109,8 +116,22 @@ public class PuzzleUtils {
       }
     } else {
       switch (borderSize) {
+        case 1:
+          return new OneSpecialLayout(themeId);
         case 2:
           return new TwoSpecialLayout(context, themeId);
+        case 3:
+          return new ThreeSpecialLayout(context, themeId);
+        case 4:
+          return new FourSpecialLayout(context, themeId);
+        case 5:
+          return new FiveSpecialLayout(context, themeId);
+        case 6:
+          return new SixSpecialLayout(themeId);
+        case 7:
+          return new SevenSpecialLayout(themeId);
+        case 9:
+          return new NineSpecialLayout(themeId);
         default:
           return new TwoSpecialLayout(context, themeId);
       }
@@ -160,7 +181,14 @@ public class PuzzleUtils {
 //    puzzleLayouts.addAll(StraightLayoutHelper.getAllThemeLayout(9));
 
     // special layout
+    puzzleLayouts.addAll(SpecialLayoutHelper.getAllThemeLayout(context, 1));
     puzzleLayouts.addAll(SpecialLayoutHelper.getAllThemeLayout(context, 2));
+    puzzleLayouts.addAll(SpecialLayoutHelper.getAllThemeLayout(context, 3));
+    puzzleLayouts.addAll(SpecialLayoutHelper.getAllThemeLayout(context, 4));
+    puzzleLayouts.addAll(SpecialLayoutHelper.getAllThemeLayout(context, 5));
+    puzzleLayouts.addAll(SpecialLayoutHelper.getAllThemeLayout(context, 6));
+    puzzleLayouts.addAll(SpecialLayoutHelper.getAllThemeLayout(context, 7));
+    puzzleLayouts.addAll(SpecialLayoutHelper.getAllThemeLayout(context, 9));
     return puzzleLayouts;
   }
 }

@@ -1,30 +1,22 @@
 package com.xiaopo.flying.puzzle.layouts.special;
 
-import android.content.Context;
-
 import com.xiaopo.flying.puzzle.special.model.TemplateRes;
-import com.xiaopo.flying.puzzle.special.template.Template2;
+import com.xiaopo.flying.puzzle.special.template.Template7;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TwoSpecialLayout extends NumberSpecialLayout {
-    private Context mContext;
+public class SevenSpecialLayout extends NumberSpecialLayout {
     private List<TemplateRes> mTemplateResList;
 
-    public TwoSpecialLayout(Context context, int theme) {
+    public SevenSpecialLayout(int theme) {
         super(theme);
-        mContext = context;
-    }
-
-    @Override
-    protected void initThemes() {
-        mTemplateResList = new ArrayList<>();
-        Template2.init(mTemplateResList, mContext, 0, 0, 0, 0, 2);
     }
 
     @Override
     public int getThemeCount() {
+        mTemplateResList = new ArrayList<>();
+        Template7.init(mTemplateResList, 0, 0, 0, 0, 7);
         return mTemplateResList.size();
     }
 

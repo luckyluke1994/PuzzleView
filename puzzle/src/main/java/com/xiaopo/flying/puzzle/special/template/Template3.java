@@ -33,7 +33,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(3060, 3060));
         lstCollagePoints.add(TemplateManager.initCollagePoint(2040, 3060));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3_2", FitType.TITLE, "template/g3_2.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3_2", FitType.TITLE, "template/g3_2.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(190, 260));
@@ -53,7 +53,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(2880, 2710));
         lstCollagePoints.add(TemplateManager.initCollagePoint(2110, 2710));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3X_12", FitType.TITLE, "template/Artboard3_12.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3X_12", FitType.TITLE, "template/Artboard3_12.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 0));
@@ -73,7 +73,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(3060, 3060));
         lstCollagePoints.add(TemplateManager.initCollagePoint(1530, 3060));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3_5", FitType.TITLE, "template/g3_5.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3_5", FitType.TITLE, "template/g3_5.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 0));
@@ -93,7 +93,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(3060, 3060));
         lstCollagePoints.add(TemplateManager.initCollagePoint(1530, 3060));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3_7", FitType.TITLE, "template/g3_7.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3_7", FitType.TITLE, "template/g3_7.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 0));
@@ -113,7 +113,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(3060, 3060));
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 3060));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3_n_2", FitType.TITLE, "template/new/3/g3_n_2.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3_n_2", FitType.TITLE, "template/new/3/g3_n_2.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 0));
@@ -249,7 +249,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(2780, 2810));
         lstCollagePoints.add(TemplateManager.initCollagePoint(1660, 2810));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3X_10", FitType.TITLE, "template/Artboard3_10.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3X_10", FitType.TITLE, "template/Artboard3_10.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(270, 270));
@@ -269,7 +269,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(2780, 2780));
         lstCollagePoints.add(TemplateManager.initCollagePoint(1660, 2780));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3_13", FitType.TITLE, "template/Artboard3_13.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3_13", FitType.TITLE, "template/Artboard3_13.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(240, 120));
@@ -289,7 +289,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(2810, 2940));
         lstCollagePoints.add(TemplateManager.initCollagePoint(1950, 2940));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3X_4", FitType.TITLE, "template/Artboard3_4.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3X_4", FitType.TITLE, "template/Artboard3_4.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 0));
@@ -309,7 +309,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(3060, 3060));
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 3060));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3_1", FitType.TITLE, "template/g3_1.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3_1", FitType.TITLE, "template/g3_1.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 0));
@@ -329,7 +329,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(3060, 3060));
         lstCollagePoints.add(TemplateManager.initCollagePoint(1530, 3060));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3_6", FitType.TITLE, "template/g3_6.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3_6", FitType.TITLE, "template/g3_6.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 0));
@@ -349,7 +349,7 @@ public class Template3 {
         lstCollagePoints.add(TemplateManager.initCollagePoint(3060, 3060));
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 3060));
         lstCollageInfo.add(new LibCollageInfo(lstCollagePoints, 10, outTerFrameWidth, innerFrameWidth));
-        resList.add(TemplateManager.initAssetItem("g3_3", FitType.TITLE, "template/g3_3.png", lstCollageInfo, radius, frameWidth, number));
+        //resList.add(TemplateManager.initAssetItem("g3_3", FitType.TITLE, "template/g3_3.png", lstCollageInfo, radius, frameWidth, number));
         lstCollageInfo = new ArrayList<>();
         lstCollagePoints = new ArrayList<>();
         lstCollagePoints.add(TemplateManager.initCollagePoint(0, 0));

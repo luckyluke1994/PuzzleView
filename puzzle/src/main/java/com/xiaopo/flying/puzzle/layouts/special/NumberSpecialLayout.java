@@ -10,6 +10,7 @@ public abstract class NumberSpecialLayout extends SpecialPuzzleLayout {
     protected int theme;
 
     public NumberSpecialLayout(int theme) {
+        initThemes();
         if (theme >= getThemeCount()) {
             Log.e(TAG, "NumberSpecialLayout: the most theme count is "
                     + getThemeCount()
@@ -24,5 +25,8 @@ public abstract class NumberSpecialLayout extends SpecialPuzzleLayout {
 
     public int getTheme() {
         return theme;
+    }
+
+    protected void initThemes() {
     }
 }

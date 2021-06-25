@@ -3,16 +3,16 @@ package com.xiaopo.flying.puzzle.layouts.special;
 import android.content.Context;
 
 import com.xiaopo.flying.puzzle.special.model.TemplateRes;
-import com.xiaopo.flying.puzzle.special.template.Template2;
+import com.xiaopo.flying.puzzle.special.template.Template5;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TwoSpecialLayout extends NumberSpecialLayout {
+public class FiveSpecialLayout extends NumberSpecialLayout {
     private Context mContext;
     private List<TemplateRes> mTemplateResList;
 
-    public TwoSpecialLayout(Context context, int theme) {
+    public FiveSpecialLayout(Context context, int theme) {
         super(theme);
         mContext = context;
     }
@@ -20,7 +20,7 @@ public class TwoSpecialLayout extends NumberSpecialLayout {
     @Override
     protected void initThemes() {
         mTemplateResList = new ArrayList<>();
-        Template2.init(mTemplateResList, mContext, 0, 0, 0, 0, 2);
+        Template5.init(mTemplateResList, null, 0, 0, 0, 0, 5);
     }
 
     @Override

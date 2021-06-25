@@ -65,7 +65,7 @@ public class SpecialPuzzlePiece extends PuzzlePiece {
                             paint.setXfermode(SRC_IN);
                             canvas.drawBitmap(bitmap, matrix, paint);
                             paint.setXfermode(DST_IN);
-                            canvas.drawBitmap(maskBitmap, areaRect.left, areaRect.top, paint);
+                            canvas.drawBitmap(maskBitmap, (int) areaRect.left, (int) areaRect.top, paint);
                         }
                     }
                 }
