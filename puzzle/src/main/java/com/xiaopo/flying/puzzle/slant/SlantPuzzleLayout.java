@@ -93,7 +93,7 @@ public abstract class SlantPuzzleLayout implements PuzzleLayout {
       }
 
       if (l.attachStartLine() != line.attachStartLine()
-          || l.attachEndLine() != line.attachEndLine()) {
+          && l.attachEndLine() != line.attachEndLine()) {
         continue;
       }
 
@@ -117,7 +117,7 @@ public abstract class SlantPuzzleLayout implements PuzzleLayout {
       }
 
       if (l.attachStartLine() != line.attachStartLine()
-          || l.attachEndLine() != line.attachEndLine()) {
+          && l.attachEndLine() != line.attachEndLine()) {
         continue;
       }
 
@@ -155,6 +155,7 @@ public abstract class SlantPuzzleLayout implements PuzzleLayout {
     for (int i = 0; i < areas.size(); i++) {
       areas.get(i).updateCornerPoints();
     }
+    updateLineLimit();
   }
 
   @Override
